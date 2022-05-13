@@ -23,12 +23,10 @@ public class OrderServiceImpl implements OrderService{
     //불번,필수 의존관계에 사용
     //commit Test
 
-    //commit Test2
-
-
-    public OrderServiceImpl(MemberRepository memberRepository,DiscountPolicy discountPolicy) {
+    @Autowired
+    public OrderServiceImpl(MemberRepository memberRepository,DiscountPolicy rateDiscountPolicy) {
         this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
+        this.discountPolicy = rateDiscountPolicy;
     }
 
     @Override
