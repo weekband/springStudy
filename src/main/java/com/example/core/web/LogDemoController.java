@@ -2,6 +2,7 @@ package com.example.core.web;
 
 import com.example.core.common.MyLogger;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -20,9 +21,9 @@ public class LogDemoController {
     public String logDemo(HttpServletRequest request) {
         String requsetURL = request.getRequestURI().toString();
         myLogger.setRequestURL(requsetURL);
-
         myLogger.log("controller test");
         logDemoService.logic("testId");
+
         return "OK";
     }
 }
